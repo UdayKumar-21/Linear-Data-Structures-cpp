@@ -59,7 +59,7 @@ void CircularSinglyLinkedList::insertAtBegin(int data) {
 
 // method to insert an element at a specified position of the Circular singly linked list.
 void CircularSinglyLinkedList::insertAtPosition(int position, int data) {
-	if (position == 1) {
+	if (position == 1) { // if the user enter the 1st position then it will effect to the head pointer
 		insertAtBegin(data);
 		return;
 	}
@@ -79,11 +79,17 @@ void CircularSinglyLinkedList::insertAtPosition(int position, int data) {
 
 // method to delete the node at the end of the Circular singly linked list
 void CircularSinglyLinkedList::deleteAtEnd() {
-	if (head == nullptr) {
+	if (head == nullptr) {  // to check if the list is empty
 		cout << "list is already empty nothing to delete\n";
 		return;
 	}
 	CircularSinglyLinkedNode* temp = head;
+	if(temp->next == head){  // if list has only one node after delete it ,list becomes empty.
+		delete head;
+		head = nullptr;
+		tail = nullptr;
+		return;
+	}
 	while (temp->next->next != head) {
 		temp = temp->next;
 	}
