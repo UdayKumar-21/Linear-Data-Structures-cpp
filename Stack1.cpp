@@ -62,13 +62,13 @@ struct Stack {
 		}
 		cout << endl;
 	}
-	int peek() {
+	int peek() const{
 		if (!isEmpty()) {
 			return arr[top];
 		}
 		return -1;
 	}
-	int low() {
+	int low() const{
 		if (!isEmpty()) {
 			return arr[bottom];
 		}
