@@ -3,7 +3,6 @@ using namespace std;
 #define MAX 10
 
 struct Stack {
-public:
 	int top;
 	int bottom;
 	int arr[MAX] = { 0 };
